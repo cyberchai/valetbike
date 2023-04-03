@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root to: "users#create_user"
+  
+    # get "/stations/:identifier", to: "station#reverse", as: "station_rev"
+  match'ride',to:"bikes#index", via: :get
+  resources :bikes, only: [:index]
+  resources :stations, only: [:index]
 end
