@@ -9,13 +9,15 @@
     <% if Current.user %>
         <%= button_to "Logout", logout_path, method: :delete %>
         <%= link_to("Change Password", edit_password_path) %>
+         <%=link_to('return', return_path($bike))%>
+        
+
     <% else %>
         <%= link_to("Log In", login_path) %>
         <%= link_to("Sign Up", signup_path) %>
     <% end %>
 
-
-    <html>
+<html>
         <head> 
             <title> How to make a page</title>
             <link rel="stylesheets" href="/style.css">
@@ -32,8 +34,6 @@
     
         </body>
     </html>
-
-
   
     
     
