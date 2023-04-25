@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new"
   get "user_home", to: "users#show"
   post 'login', to: 'sessions#create'
+  get "report", to: "users#report"
 
   
 
