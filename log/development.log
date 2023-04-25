@@ -34233,3 +34233,626 @@ Did you mean?  strip):
 app/views/users/new.html.erb:31
 app/views/users/new.html.erb:2
 app/controllers/users_controller.rb:15:in `create'
+Started GET "/" for ::1 at 2023-04-25 16:15:58 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (14.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1046)
+  Rendered layout layouts/application.html.erb (Duration: 286.3ms | Allocations: 81520)
+Completed 200 OK in 371ms (Views: 292.8ms | ActiveRecord: 25.2ms | Allocations: 98263)
+
+
+Started GET "/login" for ::1 at 2023-04-25 16:16:02 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 17.9ms | Allocations: 2755)
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 13750)
+Completed 200 OK in 47ms (Views: 43.3ms | ActiveRecord: 0.6ms | Allocations: 15279)
+
+
+Started POST "/login" for ::1 at 2023-04-25 16:16:16 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"zyu20@smith.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'zyu20@smith.edu' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 637)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 11505)
+Completed 200 OK in 23ms (Views: 15.9ms | ActiveRecord: 2.0ms | Allocations: 13510)
+
+
+Started POST "/login" for ::1 at 2023-04-25 16:16:17 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"zyu20@smith.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'zyu20@smith.edu' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 11318)
+Completed 200 OK in 30ms (Views: 23.9ms | ActiveRecord: 1.3ms | Allocations: 12837)
+
+
+Started POST "/login" for ::1 at 2023-04-25 16:16:17 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"zyu20@smith.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'zyu20@smith.edu' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 11317)
+Completed 200 OK in 28ms (Views: 22.1ms | ActiveRecord: 1.1ms | Allocations: 12809)
+
+
+Started POST "/login" for ::1 at 2023-04-25 16:16:17 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"zyu20@smith.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'zyu20@smith.edu' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 11316)
+Completed 200 OK in 25ms (Views: 18.8ms | ActiveRecord: 1.2ms | Allocations: 12814)
+
+
+Started POST "/login" for ::1 at 2023-04-25 16:16:17 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"zyu20@smith.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'zyu20@smith.edu' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 11366)
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 0.9ms | Allocations: 12859)
+
+
+Started POST "/login" for ::1 at 2023-04-25 16:24:27 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"zyu20@smith.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'zyu20@smith.edu' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 11347)
+Completed 200 OK in 34ms (Views: 20.2ms | ActiveRecord: 6.0ms | Allocations: 12980)
+
+
+Started POST "/login" for ::1 at 2023-04-25 16:24:32 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"zyu20@smith.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'zyu20@smith.edu' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 11316)
+Completed 200 OK in 28ms (Views: 22.3ms | ActiveRecord: 1.2ms | Allocations: 12823)
+
+
+Started POST "/login" for ::1 at 2023-04-25 16:24:33 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"zyu20@smith.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'zyu20@smith.edu' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 11321)
+Completed 200 OK in 30ms (Views: 23.8ms | ActiveRecord: 1.1ms | Allocations: 12813)
+
+
+Started POST "/login" for ::1 at 2023-04-25 16:24:34 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"zyu20@smith.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'zyu20@smith.edu' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 11316)
+Completed 200 OK in 27ms (Views: 21.2ms | ActiveRecord: 1.0ms | Allocations: 12826)
+
+
+Started GET "/password/reset" for ::1 at 2023-04-25 16:24:37 -0400
+Processing by PasswordResetsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1812)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 12796)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 0.4ms | Allocations: 14425)
+
+
+Started POST "/password/reset" for ::1 at 2023-04-25 16:24:39 -0400
+Processing by PasswordResetsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"zyu20@smith.edu", "commit"=>"reset password"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'zyu20@smith.edu' LIMIT 1[0m
+  ↳ app/controllers/password_resets_controller.rb:6:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering password_mailer/reset.html.erb within layouts/mailer
+  Rendered password_mailer/reset.html.erb within layouts/mailer (Duration: 1.1ms | Allocations: 337)
+  Rendered layout layouts/mailer.html.erb (Duration: 2.2ms | Allocations: 557)
+  Rendering layout layouts/mailer.text.erb
+  Rendering password_mailer/reset.text.erb within layouts/mailer
+  Rendered password_mailer/reset.text.erb within layouts/mailer (Duration: 1.0ms | Allocations: 170)
+  Rendered layout layouts/mailer.text.erb (Duration: 2.4ms | Allocations: 358)
+PasswordMailer#reset: processed outbound mail in 31.4ms
+Delivered mail 644837077d7a3_3e3e42f47546f@Helens-MacBook-Air-2.local.mail (36.5ms)
+Date: Tue, 25 Apr 2023 16:24:39 -0400
+From: from@example.com
+To: zyu20@smith.edu
+Message-ID: <644837077d7a3_3e3e42f47546f@Helens-MacBook-Air-2.local.mail>
+Subject: Reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_644837077b53c_3e3e42f475322";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_644837077b53c_3e3e42f475322
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi zyu20@smith.edu,
+
+Someone requested a reset of your password.
+
+If this was you. click the link to reset your password. The link will expire in 15 minutes. 
+
+http://localhost:3000/password/reset/edit
+
+----==_mimepart_644837077b53c_3e3e42f475322
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    Hi zyu20@smith.edu,
+
+Someone requested a reset of your password.
+
+If this was you. click the link to reset your password. The link will expire in 15 minutes. 
+
+<a href="http://localhost:3000/password/reset/edit?token=eyJfcmFpbHMiOnsibWVzc2FnZSI6Ik1RPT0iLCJleHAiOiIyMDIzLTA0LTI1VDIwOjM5OjM5LjQ3N1oiLCJwdXIiOiJ1c2VyL3Bhc3N3b3JkX3Jlc2V0In19--3bcb8c3bcedb3c7d5f0517a0e348d7222101ee100419b8530a5c468e13a2c7f1">Reset Password</a>
+  </body>
+</html>
+
+----==_mimepart_644837077b53c_3e3e42f475322--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 121ms (ActiveRecord: 0.8ms | Allocations: 37505)
+
+
+Started GET "/" for ::1 at 2023-04-25 16:24:39 -0400
+Processing by PagesController#home as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 198)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 11085)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.4ms | Allocations: 12622)
+
+
+Started GET "/password/reset/edit?token=[FILTERED]" for ::1 at 2023-04-25 16:24:59 -0400
+Processing by PasswordResetsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/password_resets_controller.rb:17:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/edit.html.erb within layouts/application
+  Rendered password_resets/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 992)
+  Rendered layout layouts/application.html.erb (Duration: 49.0ms | Allocations: 11772)
+Completed 200 OK in 56ms (Views: 49.8ms | ActiveRecord: 1.0ms | Allocations: 13329)
+
+
+Started PATCH "/password/reset/edit?token=[FILTERED]" for ::1 at 2023-04-25 16:25:09 -0400
+Processing by PasswordResetsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"password"=>"[FILTERED]"}, "commit"=>"reset password", "token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/password_resets_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/password_resets_controller.rb:24:in `update'
+  [1m[36mUser Exists? (5.7ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'zyu20@smith.edu' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/controllers/password_resets_controller.rb:24:in `update'
+  [1m[36mUser Update (31.5ms)[0m  [1m[33mUPDATE `users` SET `users`.`password_digest` = '$2a$12$kiCTOnVZ5AuOVOPJT.j7LuKczLkujNdsxju8gJhivx05sSwiBNBS6', `users`.`updated_at` = '2023-04-25 20:25:09.856428' WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/password_resets_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (11.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/password_resets_controller.rb:24:in `update'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 342ms (ActiveRecord: 51.2ms | Allocations: 5785)
+
+
+Started GET "/login" for ::1 at 2023-04-25 16:25:09 -0400
+Processing by SessionsController#new as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 569)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 11452)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.3ms | Allocations: 12409)
+
+
+Started POST "/login" for ::1 at 2023-04-25 16:25:20 -0400
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"zyu20@smith.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'zyu20@smith.edu' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 270ms (ActiveRecord: 1.1ms | Allocations: 1428)
+
+
+Started GET "/" for ::1 at 2023-04-25 16:25:20 -0400
+Processing by PagesController#home as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 10931)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 0.3ms | Allocations: 12291)
+
+
+Started GET "/" for ::1 at 2023-04-25 16:26:02 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 631)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 11892)
+Completed 200 OK in 25ms (Views: 21.2ms | ActiveRecord: 0.5ms | Allocations: 13855)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Started GET "/" for ::1 at 2023-04-25 16:26:59 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.3ms | Allocations: 990)
+  Rendered layout layouts/application.html.erb (Duration: 232.2ms | Allocations: 79563)
+Completed 200 OK in 279ms (Views: 237.6ms | ActiveRecord: 7.7ms | Allocations: 96275)
+
+
+Started GET "/map" for ::1 at 2023-04-25 16:27:02 -0400
+Processing by MapController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering map/show.html.erb within layouts/application
+  Rendered map/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 183)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 11215)
+Completed 200 OK in 30ms (Views: 25.2ms | ActiveRecord: 0.6ms | Allocations: 12844)
+
+
+Started GET "/user_home" for ::1 at 2023-04-25 16:27:09 -0400
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 579)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 11588)
+Completed 200 OK in 31ms (Views: 25.6ms | ActiveRecord: 0.5ms | Allocations: 13619)
+
+
+Started GET "/user_home" for ::1 at 2023-04-25 16:27:44 -0400
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 11838)
+Completed 200 OK in 37ms (Views: 31.5ms | ActiveRecord: 0.6ms | Allocations: 13925)
+
+
+Started GET "/" for ::1 at 2023-04-25 16:30:47 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 17.9ms | Allocations: 4748)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 4845)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.4ms | Allocations: 6903)
+
+
+  
+ActionView::Template::Error (undefined method `block' for nil:NilClass
+
+'.freeze;     if Current.user && params[:user].block == false 
+                                              ^^^^^^):
+    11:       
+    12:     </div> 
+    13: 
+    14:     <% if Current.user && params[:user].block == false %>
+    15:         <%= button_to "Logout", logout_path, method: :delete %>
+    16:         <%= link_to("Change Password", edit_password_path) %>
+    17:         <%= link_to("Report Issue", report_path) %>
+  
+app/views/pages/home.html.erb:14
+Started GET "/" for ::1 at 2023-04-25 16:31:30 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 627)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 12019)
+Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 0.4ms | Allocations: 14094)
+
+
+Started GET "/user_home" for ::1 at 2023-04-25 16:31:32 -0400
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 561)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 11556)
+Completed 200 OK in 29ms (Views: 23.2ms | ActiveRecord: 0.5ms | Allocations: 13465)
+
+
+Started GET "/user_home" for ::1 at 2023-04-25 16:31:50 -0400
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 562)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 11837)
+Completed 200 OK in 28ms (Views: 22.0ms | ActiveRecord: 0.5ms | Allocations: 13931)
+
+
+Started GET "/user_home" for ::1 at 2023-04-25 16:31:51 -0400
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 139)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 10909)
+Completed 200 OK in 36ms (Views: 29.7ms | ActiveRecord: 0.6ms | Allocations: 12394)
+
+
+Started GET "/user_home" for ::1 at 2023-04-25 16:32:07 -0400
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 562)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 11838)
+Completed 200 OK in 26ms (Views: 20.8ms | ActiveRecord: 0.6ms | Allocations: 13835)
+
+
+Started GET "/user_home" for ::1 at 2023-04-25 16:32:45 -0400
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 562)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 11837)
+Completed 200 OK in 39ms (Views: 29.3ms | ActiveRecord: 3.5ms | Allocations: 13911)
+
+
+Started GET "/user_home" for ::1 at 2023-04-25 16:33:32 -0400
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:32:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1385)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1474)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms | Allocations: 3539)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div  class = "user index"> 
+    <h1>Welcome</h1>
+
+    <% if @user %>
+        Logged in as: <%= @user.username %><br>
+        <%= link_to("Edit username", edit_username_path) %><br>
+
+        block: <%= @user.block == false %><br>
+        <%= @user.block == false  dd%>
+
+        email:  <%= @user.email %><br>
+        
+        address: <%= @user.address %><br> 
+        <%= link_to("Edit address", edit_address_path) %><br> 
+        
+        birthday: <%= @user.birthday %><br>
+
+        <%= link_to("Payment method", payment_path)%><br>
+
+        default payment: <%= @user.default_payment %><br>
+
+        wallet_point: <%= @user.wallet_point%><br>
+        <%= link_to("Edit wallet point", edit_wallet_path) %><br> 
+
+    <%else%>
+        You haven't logged in. Please log in to see your user profile. 
+        <%= link_to("Click here", login_path) %>
+    <% end %>
+    
+
+</div>
+):
+1:    <div  class = "user index"> 
+2:        <h1>Welcome</h1>
+3:    
+4:        <% if @user %>
+5:            Logged in as: <%= @user.username %><br>
+6:            <%= link_to("Edit username", edit_username_path) %><br>
+7:    
+8:            block: <%= @user.block == false %><br>
+9:            <%= @user.block == false  dd%>
+10:    
+11:            email:  <%= @user.email %><br>
+12:            
+13:            address: <%= @user.address %><br> 
+14:            <%= link_to("Edit address", edit_address_path) %><br> 
+15:            
+16:            birthday: <%= @user.birthday %><br>
+17:    
+18:            <%= link_to("Payment method", payment_path)%><br>
+19:    
+20:            default payment: <%= @user.default_payment %><br>
+21:    
+22:            wallet_point: <%= @user.wallet_point%><br>
+23:            <%= link_to("Edit wallet point", edit_wallet_path) %><br> 
+24:    
+25:        <%else%>
+26:            You haven't logged in. Please log in to see your user profile. 
+27:            <%= link_to("Click here", login_path) %>
+28:        <% end %>
+29:        
+30:    
+31:    </div>
+  
+app/views/users/show.html.erb:9: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/show.html.erb:9: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/show.html.erb:9: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/show.html.erb:9: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/show.html.erb:9: syntax error, unexpected local variable or method, expecting ')'
+app/views/users/show.html.erb:9: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/" for ::1 at 2023-04-25 16:34:18 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 10.4ms | Allocations: 5084)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 5172)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms | Allocations: 7221)
+
+
+  
+ActionView::Template::Error (undefined method `false?' for #<ActionView::Base:0x0000000000f0c8>
+
+'.freeze;     if Current.user && @user.block == false? 
+                                                ^^^^^^):
+    12:     </div> 
+    13: 
+    14: 
+    15:     <% if Current.user && @user.block == false? %>
+    16:         <%= button_to "Logout", logout_path, method: :delete %>
+    17:         <%= link_to("Change Password", edit_password_path) %>
+    18:         <%= link_to("Report Issue", report_path) %>
+  
+app/views/pages/home.html.erb:15
+Started GET "/" for ::1 at 2023-04-25 16:34:27 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.6ms | Allocations: 625)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 12017)
+Completed 200 OK in 43ms (Views: 35.8ms | ActiveRecord: 0.5ms | Allocations: 14096)
+
+
+Started GET "/" for ::1 at 2023-04-25 16:34:50 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.9ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 12132)
+Completed 200 OK in 36ms (Views: 30.6ms | ActiveRecord: 0.7ms | Allocations: 14197)
+
+

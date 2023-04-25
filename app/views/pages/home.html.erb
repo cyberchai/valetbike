@@ -11,14 +11,15 @@
       
     </div> 
 
-    <% if Current.user && params[:block] == false %>
+
+    <% if Current.user && @user.block == false %>
         <%= button_to "Logout", logout_path, method: :delete %>
         <%= link_to("Change Password", edit_password_path) %>
         <%= link_to("Report Issue", report_path) %>
-    <% elsif params[:block] == true %>
+    <% elsif @user.block == true %>
         <%= button_to "Logout", logout_path, method: :delete %>
         flash.alert = "Blocked"
-    <% else %>
+    <% elsif not Current.user %>
         <%= link_to("Log In", login_path) %>
         <%= link_to("Sign Up", signup_path) %>
     <% end %>
