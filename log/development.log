@@ -35028,3 +35028,17 @@ Processing by PagesController#home as TURBO_STREAM
 Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 0.4ms | Allocations: 12457)
 
 
+Started GET "/" for ::1 at 2023-04-25 16:58:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1264)
+  Rendered layout layouts/application.html.erb (Duration: 210.8ms | Allocations: 79697)
+Completed 200 OK in 259ms (Views: 216.4ms | ActiveRecord: 9.0ms | Allocations: 96421)
+
+
