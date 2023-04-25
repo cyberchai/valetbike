@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root to: "pages#home"
+
+  # test
+  get "map", to: "map#show"
   #root "rentals#new"
+  
   
   #get "/stations/:identification", to: "stations#main"
   get "stations", to: "stations#main", as:"stations"
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
   get "user_home", to: "users#show"
   post 'login', to: 'sessions#create'
 
+  
 
   delete "logout", to: "sessions#destroy"
 
@@ -26,8 +31,14 @@ Rails.application.routes.draw do
   
   # payment page info
   get "payment", to:'payment#new' # testing
-  get "bikes", to: "bikes#index" # testing
+  get "bikes", to: "bikes#index" # testing 
   get '/bikes/return', to: "bikes#return"
+
+  get "password/reset", to: "password_resets#new"
+  post "password/reset", to: "password_resets#create"
+  get "password/reset/edit", to: "password_resets#edit"
+  patch "password/reset/edit", to: "password_resets#update"
+  
   match'ride',to:"bikes#index", via: :get
   resources :bikes, only: [:index]
   resources :stations, only: [:main, :show]
@@ -35,4 +46,22 @@ Rails.application.routes.draw do
   resources :rentals, only: [:new, :create]
   resources :rentals, only: [:return]
 
-end
+  get "rename", to: "username#edit", as: :edit_username
+  patch "rename", to: "username#update"
+
+  get "change_address", to: "address#edit", as: :edit_address
+  patch "change_address", to: "address#update"
+
+  get "change_wallet", to: "wallet#edit", as: :edit_wallet
+  post "change_wallet", to: "wallet#update"
+
+  get "rename", to: "username#edit", as: :edit_username
+  patch "rename", to: "username#update"
+
+  get "change_address", to: "address#edit", as: :edit_address
+  patch "change_address", to: "address#update"
+
+  get "change_wallet", to: "wallet#edit", as: :edit_wallet
+  post "change_wallet", to: "wallet#update"
+
+end 
