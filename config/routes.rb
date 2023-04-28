@@ -38,7 +38,8 @@ Rails.application.routes.draw do
   post "password/reset", to: "password_resets#create"
   get "password/reset/edit", to: "password_resets#edit"
   patch "password/reset/edit", to: "password_resets#update"
-  
+
+  get '/bikes/return', to: "bikes#return"
   match'ride',to:"bikes#index", via: :get
   resources :bikes, only: [:index]
   resources :stations, only: [:main, :show]
