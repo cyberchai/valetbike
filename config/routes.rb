@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get "user_home", to: "users#show"
   post 'login', to: 'sessions#create'
 
+  get "bikes_unlock", to: "bikes#unlock"
+
   
 
   delete "logout", to: "sessions#destroy"
@@ -30,7 +32,7 @@ Rails.application.routes.draw do
   get 'return', to: 'rentals#return'
   
   # payment page info
-  get "payment", to:'payment#new' # testing
+  #get "payment", to:'payment#new' # testing
   get "bikes", to: "bikes#index" # testing 
   get '/bikes/return', to: "bikes#return"
 
@@ -55,14 +57,10 @@ Rails.application.routes.draw do
 
   get "change_wallet", to: "wallet#edit", as: :edit_wallet
   post "change_wallet", to: "wallet#update"
+  
+  get "payment", to: "payment#edit", as: :payment
+  post "payment", to: "payment#update"
 
-  get "rename", to: "username#edit", as: :edit_username
-  patch "rename", to: "username#update"
 
-  get "change_address", to: "address#edit", as: :edit_address
-  patch "change_address", to: "address#update"
 
-  get "change_wallet", to: "wallet#edit", as: :edit_wallet
-  post "change_wallet", to: "wallet#update"
-
-end 
+end

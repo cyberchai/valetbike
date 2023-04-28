@@ -1,0 +1,204 @@
+
+<%= stylesheet_link_tag 'payment' %>
+
+
+
+
+<div>
+
+
+<h1>Payment</h1>
+<br>
+
+
+<h1>You would need to pay $<%=@rental.hours%> for this ride </h1>
+
+
+<script>
+       function showOptions() {
+         
+           var paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+          if (paymentMethod === "creditCard") {
+               document.getElementById("creditCardOptions").style.display = "block";
+               document.getElementById("paypalOptions").style.display = "none";
+               document.getElementById("couponOptions").style.display = "none";
+               document.getElementById("walletMoneyOptions").style.display = "none";
+           } else if (paymentMethod === "paypal") {
+               document.getElementById("creditCardOptions").style.display = "none";
+               document.getElementById("paypalOptions").style.display = "block";
+               document.getElementById("couponOptions").style.display = "none";
+               document.getElementById("applePayOptions").style.display = "none";
+           } else if (paymentMethod === "coupon") {
+               document.getElementById("creditCardOptions").style.display = "none";
+               document.getElementById("paypalOptions").style.display = "none";
+               document.getElementById("couponOptions").style.display = "block";
+               document.getElementById("walletMoneyOptions").style.display = "none";
+           } else if (paymentMethod === "walletMoney") {
+               document.getElementById("creditCardOptions").style.display = "none";
+               document.getElementById("paypalOptions").style.display = "none";
+               document.getElementById("couponOptions").style.display = "none";
+               document.getElementById("walletMoneyOptions").style.display = "block";
+           } else {
+               document.getElementById("creditCardOptions").style.display = "none";
+               document.getElementById("paypalOptions").style.display = "none";
+               document.getElementById("couponOptions").style.display = "none";
+               document.getElementById("walletMoneyOptions").style.display = "none";
+           }
+       }
+
+   </script>
+
+
+<div>
+   <a class="toggle" href="<%= bikes_path %>">&emsp; Back to Bike Fleet</a>
+</div>
+
+
+<br>
+
+
+   <div>
+       <form action="/action_page.php"> <!-- this should be payment_action or the payment controller page -->
+           <h2>Select Payment Method:</h2><br>
+           <label><input type="radio" name="paymentMethod" value="paypal" onchange="showOptions()">PayPal</label><br>
+           <label><input type="radio" name="paymentMethod" value="creditCard" onchange="showOptions()">Credit/Debit</label><br>
+           <label><input type="radio" name="paymentMethod" value="coupon" onchange="showOptions()">Coupon</label><br>
+           <label><input type="radio" name="paymentMethod" value="walletMoney" onchange="showOptions()">Wallet Money</label><br>
+
+        </form>
+       <br><br><br>
+
+       <!-- hidden div options: -->
+
+       <div id="creditCardOptions" style="display: none;">
+           <h3>Credit / Debit Card Payment</h3>
+            <%= form_with url: payment_path do |form| %>
+                <% if Current.user.errors.any? %>
+                    <div class="alert alert-danger">
+                        <% Current.user.errors.full_messages.each do |message| %>
+                            <div><%= message %></div>
+                        <% end %>
+                    </div>
+                <% end %>
+
+                 <div class="mb-3" >
+                    <%= form.label :finamecard, "Enter your First Name" %>
+                    <%= form.text_field :finamecard, class: "form-control"%>
+                </div>
+
+                <div class="mb-3" >
+                    <%= form.label :lanamecard, "Enter your Last Name" %>
+                    <%= form.text_field :lanamecard, class: "form-control"%>
+                </div>
+
+                <div class="mb-3" >
+                    <%= form.label :card_num, "Card Number" %>
+                    <%= form.text_field :card_num, class: "form-control"%>
+                </div>
+
+                <div class="mb-3" >
+                    <%= form.label :card_date, "Expiry Date" %>
+                    <%= form.date_field :card_date, class: "form-control"%>
+                </div>
+
+                <div class="mb-3" >
+                    <%= form.label :cvv, "CVV" %>
+                    <%= form.text_field :cvv, class: "form-control"%>
+                </div>
+
+                <div class="mb-3">
+                    <%= form.submit "Submit", class: "btn btn-primary" %>
+                </div>
+
+            <% end %>
+       </div>
+
+
+       <div id="paypalOptions" style="display: none;">
+           <!-- this will eventually redirect to paypal API -->
+           <h3>PayPal Payment</h3>
+            <%= form_with url: payment_path do |form| %>
+                <% if Current.user.errors.any? %>
+                    <div class="alert alert-danger">
+                        <% Current.user.errors.full_messages.each do |message| %>
+                            <div><%= message %></div>
+                        <% end %>
+                    </div>
+                <% end %>
+
+                 <div class="mb-3" >
+                    <%= form.label :email_paypal, "Enter your Email:" %>
+                    <%= form.email_field :email_paypal, class: "form-control"%>
+                </div>
+
+                <div class="mb-3" >
+                    <%= form.label :password_paypal, "Enter your Password" %>
+                    <%= form.text_field :password_paypal, class: "form-control"%>
+                </div>
+
+                <div class="mb-3">
+                    <%= form.submit "Submit", class: "btn btn-primary" %>
+                </div>
+
+            <% end %>
+       </div>
+
+
+       <div id="couponOptions" style="display: none;">
+           <h3>Coupon</h3>
+            <%= form_with url: payment_path do |form| %>
+                <% if Current.user.errors.any? %>
+                    <div class="alert alert-danger">
+                        <% Current.user.errors.full_messages.each do |message| %>
+                            <div><%= message %></div>
+                        <% end %>
+                    </div>
+                <% end %>
+
+                 <div class="mb-3" >
+                    <%= form.label :coupon_number, "Enter Coupon Number:" %>
+                    <%= form.text_field :coupon_number, class: "form-control"%>
+                </div>
+
+                <div class="mb-3" >
+                    <%= form.label :coupon_sc, "Enter Coupon Security Code:" %>
+                    <%= form.text_field :coupon_sc, class: "form-control"%>
+                </div>
+
+                <div class="mb-3">
+                    <%= form.submit "Submit", class: "btn btn-primary" %>
+                </div>
+
+            <% end %>
+       </div>
+
+
+
+
+       <div id="walletMoneyOptions" style="display: none;">
+           <h3>Wallet Money</h3>
+           <p>The money currently in your account is $ <%= @user.wallet_point%></p>
+           <p>Your remaining money would be $ <%= @user.wallet_point- @rental.hours%>
+           <%= form_with url: payment_path do |form| %>
+                <% if Current.user.errors.any? %>
+                    <div class="alert alert-danger">
+                        <% Current.user.errors.full_messages.each do |message| %>
+                            <div><%= message %></div>
+                        <% end %>
+                    </div>
+                <% end %>
+
+                <div class="mb-3" >
+                    <%= form.label :yn_wallet, "Do you confirm to pay with you Paypal Enter y/n" %>
+                    <%= form.text_field :yn_wallet, class: "form-control"%>
+                </div>
+
+                <div class="mb-3">
+                    <%= form.submit "Submit", class: "btn btn-primary" %>
+                </div>
+
+            <% end %>
+       </div>
+   </div>
+
+</div>

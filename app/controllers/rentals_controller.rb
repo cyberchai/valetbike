@@ -28,21 +28,24 @@ class RentalsController < ApplicationController
           render :new
         end  
         redirect_to (bikes_unlock_path(params[:format])), notice: "Bike rented successfully!"
+      
+      @price = @rental.hours
+      if @rental.save
+        session[:payment_id] = @rental.id
+        redirect_to payment_path, notice: "Plase select your payment mehtod!"
       else
         render :new
       end
     end
+  end
 
     def return
       @bikes= Bike.find_by_identifier(params[:format])
       @bikes.update({current_station_id: $s })
       redirect_to '/bikes/return'
     end
-<<<<<<< HEAD
- 
-=======
->>>>>>> 8b4587b01f73db25b4256962d6c80dcdba7f9ee9
   
+
     private
   
     def rental_params
