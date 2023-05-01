@@ -14,7 +14,7 @@
   display: flex;          /* NEW: Opera 12.1, Firefox 22+ */
 }
 
-.flexbox.horizontal {
+/* .flexbox.horizontal {
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -ms-flex-direction: row;
@@ -120,4 +120,4 @@
   -webkit-justify-content: space-around;
   -ms-justify-content: space-around;
   justify-content: space-around;
-}
+} */
