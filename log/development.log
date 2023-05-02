@@ -39605,3 +39605,1606 @@ Processing by ReportsController#new as HTML
 Completed 200 OK in 30ms (Views: 19.5ms | ActiveRecord: 2.2ms | Allocations: 18557)
 
 
+Started GET "/reports/new" for ::1 at 2023-05-01 22:31:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 46.7ms | Allocations: 3713)
+  Rendered layout layouts/application.html.erb (Duration: 282.7ms | Allocations: 86709)
+Completed 200 OK in 367ms (Views: 295.9ms | ActiveRecord: 7.3ms | Allocations: 105704)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 22:38:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 43.2ms | Allocations: 3713)
+  Rendered layout layouts/application.html.erb (Duration: 181.5ms | Allocations: 86638)
+Completed 200 OK in 243ms (Views: 191.3ms | ActiveRecord: 5.0ms | Allocations: 105630)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 22:38:25 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 888)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 13158)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 0.4ms | Allocations: 14304)
+
+
+Started GET "/" for ::1 at 2023-05-01 22:38:30 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 672)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 13069)
+Completed 200 OK in 26ms (Views: 21.8ms | ActiveRecord: 0.3ms | Allocations: 14693)
+
+
+Started GET "/reports" for ::1 at 2023-05-01 22:38:32 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1535)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 1629)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms | Allocations: 2851)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="page-section flexbox vertical stretch"> 
+  <div class="section-inner flexbox vertical stretch"> 
+    <div class="section-title flexbox horizontal center">
+      User Reports!
+    <%if Current.user.admin%>
+    </div>
+      <h1>Description</h1>
+        <table>
+          <tr>
+              <th>Description </th>             
+          </tr>
+          <% @reports.each do |report| %>
+            <tr>
+              <td><%= report.description%></td>        
+            </tr>
+          <% end %>
+        </table>
+    </div> 
+    <%else%>
+        <button class="unlock-button">  <%= link_to("Create Your Report", new_reports_path)%> </button >
+</div>
+
+):
+1:    <div class="page-section flexbox vertical stretch"> 
+2:      <div class="section-inner flexbox vertical stretch"> 
+3:        <div class="section-title flexbox horizontal center">
+4:          User Reports!
+5:        <%if Current.user.admin%>
+6:        </div>
+7:          <h1>Description</h1>
+8:            <table>
+9:              <tr>
+10:                  <th>Description </th>             
+11:              </tr>
+12:              <% @reports.each do |report| %>
+13:                <tr>
+14:                  <td><%= report.description%></td>        
+15:                </tr>
+16:              <% end %>
+17:            </table>
+18:        </div> 
+19:        <%else%>
+20:            <button class="unlock-button">  <%= link_to("Create Your Report", new_reports_path)%> </button >
+21:    </div>
+  
+app/views/reports/index.html.erb:24: syntax error, unexpected end-of-input, expecting `end'
+app/views/reports/index.html.erb:24: syntax error, unexpected end-of-input, expecting `end'
+app/views/reports/index.html.erb:24: syntax error, unexpected end-of-input, expecting `end'
+app/views/reports/index.html.erb:24: syntax error, unexpected end-of-input, expecting `end'
+app/views/reports/index.html.erb:24: syntax error, unexpected end-of-input, expecting `end'
+app/views/reports/index.html.erb:24: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/reports" for ::1 at 2023-05-01 22:39:14 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 980)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 14306)
+Completed 200 OK in 21ms (Views: 17.1ms | ActiveRecord: 0.7ms | Allocations: 15972)
+
+
+Started GET "/reports" for ::1 at 2023-05-01 22:39:37 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 6006)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 6091)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms | Allocations: 7725)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_reports_path' for #<ActionView::Base:0x0000000000f528>
+
+@output_buffer.safe_append='    <button class="unlock-button">  '.freeze;@output_buffer.append=( link_to("Create Your Report", new_reports_path));@output_buffer.safe_append=' </button >
+                                                                                                                               ^^^^^^^^^^^^^^^^
+Did you mean?  new_report_path):
+    17:         </table>
+    18:     </div> 
+    19:     <%end%>
+    20:     <button class="unlock-button">  <%= link_to("Create Your Report", new_reports_path)%> </button >
+    21: </div>
+  
+app/views/reports/index.html.erb:20
+Started GET "/reports" for ::1 at 2023-05-01 22:40:21 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1053)
+  Rendered layout layouts/application.html.erb (Duration: 47.9ms | Allocations: 32490)
+Completed 200 OK in 69ms (Views: 49.8ms | ActiveRecord: 4.3ms | Allocations: 40319)
+
+
+Started GET "/reports_new" for ::1 at 2023-05-01 22:40:25 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1358)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 13497)
+Completed 200 OK in 22ms (Views: 16.1ms | ActiveRecord: 2.0ms | Allocations: 15760)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 22:40:33 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/reports"):
+  
+Started GET "/reports_new" for ::1 at 2023-05-01 22:40:33 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 867)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 13528)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.3ms | Allocations: 14591)
+
+
+Started GET "/reports" for ::1 at 2023-05-01 22:42:39 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 14.6ms | Allocations: 1385)
+  Rendered layout layouts/application.html.erb (Duration: 355.0ms | Allocations: 84061)
+Completed 200 OK in 436ms (Views: 374.4ms | ActiveRecord: 6.0ms | Allocations: 100983)
+
+
+Started GET "/reports_new" for ::1 at 2023-05-01 22:42:42 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 19.7ms | Allocations: 3363)
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 15653)
+Completed 200 OK in 60ms (Views: 44.7ms | ActiveRecord: 3.9ms | Allocations: 19036)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 22:42:49 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/reports"):
+  
+Started GET "/reports_new" for ::1 at 2023-05-01 22:42:49 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 886)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 13304)
+Completed 200 OK in 32ms (Views: 27.4ms | ActiveRecord: 0.6ms | Allocations: 14454)
+
+
+Started GET "/reports" for ::1 at 2023-05-01 22:43:42 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 1385)
+  Rendered layout layouts/application.html.erb (Duration: 252.2ms | Allocations: 84538)
+Completed 200 OK in 317ms (Views: 265.3ms | ActiveRecord: 5.3ms | Allocations: 101433)
+
+
+Started GET "/reports_new" for ::1 at 2023-05-01 22:43:44 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 12.2ms | Allocations: 3362)
+  Rendered layout layouts/application.html.erb (Duration: 36.8ms | Allocations: 15652)
+Completed 200 OK in 53ms (Views: 37.8ms | ActiveRecord: 4.0ms | Allocations: 19032)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 22:43:49 -0400
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Miss", "description"=>"fef"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1135)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 22:43:49 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 14.9ms | Allocations: 5350)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 5444)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.4ms | Allocations: 6486)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_report_path' for #<ActionView::Base:0x0000000000efb0>
+
+<a class="toggle" href="'.freeze;@output_buffer.append=( new_report_path );@output_buffer.safe_append='">&emsp; Try again</a>
+                                                         ^^^^^^^^^^^^^^^
+Did you mean?  new_rental_path):
+    1: 
+    2: <h2> Sorry you cannot submit an empty Report</h2>
+    3: 
+    4: <a class="toggle" href="<%= new_report_path %>">&emsp; Try again</a>
+    5: <a class="toggle" href="<%= root_path %>">&emsp; No report? Return to Homepage</a>
+  
+app/views/reports/empty.html.erb:4
+Started GET "/reports_new" for ::1 at 2023-05-01 22:44:33 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1472)
+  Rendered layout layouts/application.html.erb (Duration: 44.6ms | Allocations: 32635)
+Completed 200 OK in 75ms (Views: 48.4ms | ActiveRecord: 7.3ms | Allocations: 41606)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 22:44:38 -0400
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Miss", "description"=>"ewggr"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1017)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 22:44:38 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 0.7ms | Allocations: 157)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 12297)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.3ms | Allocations: 13318)
+
+
+Started GET "/reports_new" for ::1 at 2023-05-01 22:44:40 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 788)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 12927)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.3ms | Allocations: 13909)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 22:45:28 -0400
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"I missed my bike"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 871)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 22:45:28 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 0.1ms | Allocations: 34)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 12191)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.3ms | Allocations: 13152)
+
+
+Started GET "/reports_new" for ::1 at 2023-05-01 22:45:30 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 790)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 13064)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.4ms | Allocations: 14055)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 22:46:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"I miss"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 37ms (ActiveRecord: 3.9ms | Allocations: 14598)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 22:46:36 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 1.3ms | Allocations: 457)
+  Rendered layout layouts/application.html.erb (Duration: 181.5ms | Allocations: 84013)
+Completed 200 OK in 189ms (Views: 185.9ms | ActiveRecord: 0.4ms | Allocations: 86202)
+
+
+Started GET "/reports_new" for ::1 at 2023-05-01 22:46:38 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 11.2ms | Allocations: 3358)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 15648)
+Completed 200 OK in 54ms (Views: 39.0ms | ActiveRecord: 3.8ms | Allocations: 19581)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 22:46:42 -0400
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"I miss"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 999)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 22:46:42 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 0.2ms | Allocations: 34)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 12177)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.4ms | Allocations: 13170)
+
+
+Started GET "/reports_new" for ::1 at 2023-05-01 22:46:43 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 804)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 12945)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.4ms | Allocations: 13930)
+
+
+Started GET "/" for ::1 at 2023-05-01 22:48:33 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.6ms | Allocations: 974)
+  Rendered layout layouts/application.html.erb (Duration: 223.7ms | Allocations: 84419)
+Completed 200 OK in 271ms (Views: 236.7ms | ActiveRecord: 3.4ms | Allocations: 100748)
+
+
+Started GET "/return" for ::1 at 2023-05-01 22:48:35 -0400
+Processing by RentalsController#return as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT `bikes`.* FROM `bikes` WHERE `bikes`.`identifier` IS NULL LIMIT 1[0m
+  ↳ app/controllers/rentals_controller.rb:21:in `return'
+  Rendering layout layouts/application.html.erb
+  Rendering rentals/return.html.erb within layouts/application
+  Rendered rentals/return.html.erb within layouts/application (Duration: 1.0ms | Allocations: 201)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 12617)
+Completed 200 OK in 36ms (Views: 23.6ms | ActiveRecord: 1.9ms | Allocations: 16613)
+
+
+Started GET "/reports" for ::1 at 2023-05-01 22:48:38 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 19.1ms | Allocations: 6452)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 6550)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.9ms | Allocations: 8707)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reports_new_path' for #<ActionView::Base:0x0000000000f118>
+
+@output_buffer.safe_append='    <button class="unlock-button">  '.freeze;@output_buffer.append=( link_to("Create Your Report", reports_new_path));@output_buffer.safe_append=' </button >
+                                                                                                                               ^^^^^^^^^^^^^^^^
+Did you mean?  reports_path):
+    17:         </table>
+    18:     </div> 
+    19:     <%end%>
+    20:     <button class="unlock-button">  <%= link_to("Create Your Report", reports_new_path)%> </button >
+    21: </div>
+  
+app/views/reports/index.html.erb:20
+Started GET "/reports" for ::1 at 2023-05-01 22:49:01 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 5930)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 6015)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.6ms | Allocations: 7665)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_reports_path' for #<ActionView::Base:0x0000000000f460>
+
+@output_buffer.safe_append='    <button class="unlock-button">  '.freeze;@output_buffer.append=( link_to("Create Your Report", new_reports_path));@output_buffer.safe_append=' </button >
+                                                                                                                               ^^^^^^^^^^^^^^^^
+Did you mean?  new_report_path):
+    17:         </table>
+    18:     </div> 
+    19:     <%end%>
+    20:     <button class="unlock-button">  <%= link_to("Create Your Report", new_reports_path)%> </button >
+    21: </div>
+  
+app/views/reports/index.html.erb:20
+Started GET "/" for ::1 at 2023-05-01 22:49:05 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 591)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 13623)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 0.3ms | Allocations: 15074)
+
+
+Started GET "/reports" for ::1 at 2023-05-01 22:49:07 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 5626)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 5705)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.7ms | Allocations: 6781)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_reports_path' for #<ActionView::Base:0x0000000000f7a8>
+
+@output_buffer.safe_append='    <button class="unlock-button">  '.freeze;@output_buffer.append=( link_to("Create Your Report", new_reports_path));@output_buffer.safe_append=' </button >
+                                                                                                                               ^^^^^^^^^^^^^^^^
+Did you mean?  new_report_path):
+    17:         </table>
+    18:     </div> 
+    19:     <%end%>
+    20:     <button class="unlock-button">  <%= link_to("Create Your Report", new_reports_path)%> </button >
+    21: </div>
+  
+app/views/reports/index.html.erb:20
+Started GET "/reports" for ::1 at 2023-05-01 22:49:16 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 993)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 14035)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.6ms | Allocations: 15632)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 22:49:18 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 20.3ms | Allocations: 6091)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 19006)
+Completed 200 OK in 44ms (Views: 34.9ms | ActiveRecord: 2.1ms | Allocations: 22814)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 22:49:23 -0400
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"I am Miss"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 1138)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 22:49:23 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 17.6ms | Allocations: 4984)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 5064)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.4ms | Allocations: 6076)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_reports_path' for #<ActionView::Base:0x0000000000fc08>
+
+<a class="toggle" href="'.freeze;@output_buffer.append=( new_reports_path );@output_buffer.safe_append='">&emsp; Try again</a>
+                                                         ^^^^^^^^^^^^^^^^
+Did you mean?  new_report_path):
+    1: 
+    2: <h2> Sorry you cannot submit an empty Report</h2>
+    3: 
+    4: <a class="toggle" href="<%= new_reports_path %>">&emsp; Try again</a>
+    5: <a class="toggle" href="<%= root_path %>">&emsp; No report? Return to Homepage</a>
+  
+app/views/reports/empty.html.erb:4
+Started GET "/" for ::1 at 2023-05-01 22:57:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 9.0ms | Allocations: 975)
+  Rendered layout layouts/application.html.erb (Duration: 218.4ms | Allocations: 84165)
+Completed 200 OK in 266ms (Views: 232.5ms | ActiveRecord: 3.8ms | Allocations: 100493)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 22:57:25 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1709)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 1808)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.8ms | Allocations: 6139)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <br>
+<h2> Make a Report </h2>
+<h3> See something that could be improved? <br>
+Say something to our harworking team! </h3>
+<br>
+<%= form_with(model: @report, url: reports_path) do |form| %>
+  <% if @report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+      <ul>
+        <% @report.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>
+<%if Current.user.admin%>
+  <a class="toggle" href="<%= report_home_path %>">&emsp; View Reports</a>
+<a class="toggle" href="<%= root_path %>">&emsp; Return to Homepage</a>
+
+):
+1:    <br>
+2:    <h2> Make a Report </h2>
+3:    <h3> See something that could be improved? <br>
+4:    Say something to our harworking team! </h3>
+5:    <br>
+6:    <%= form_with(model: @report, url: reports_path) do |form| %>
+7:      <% if @report.errors.any? %>
+8:        <div id="error_explanation">
+9:          <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+10:          <ul>
+11:            <% @report.errors.full_messages.each do |message| %>
+12:              <li><%= message %></li>
+13:            <% end %>
+14:          </ul>
+15:        </div>
+16:      <% end %>
+17:    
+18:      <div class="field">
+19:        <%= form.label :title %>
+20:        <%= form.text_field :title %>
+21:      </div>
+22:    
+23:      <div class="field">
+24:        <%= form.label :description %>
+25:        <%= form.text_area :description %>
+26:      </div>
+27:    
+28:      <div class="actions">
+29:        <%= form.submit %>
+30:      </div>
+31:    
+32:    <% end %>
+33:    <%if Current.user.admin%>
+34:      <a class="toggle" href="<%= report_home_path %>">&emsp; View Reports</a>
+35:    <a class="toggle" href="<%= root_path %>">&emsp; Return to Homepage</a>
+  
+app/views/reports/new.html.erb:38: syntax error, unexpected end-of-input, expecting `end'
+app/views/reports/new.html.erb:38: syntax error, unexpected end-of-input, expecting `end'
+app/views/reports/new.html.erb:38: syntax error, unexpected end-of-input, expecting `end'
+app/views/reports/new.html.erb:38: syntax error, unexpected end-of-input, expecting `end'
+app/views/reports/new.html.erb:38: syntax error, unexpected end-of-input, expecting `end'
+app/views/reports/new.html.erb:38: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/reports/new" for ::1 at 2023-05-01 22:57:41 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 3449)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 16521)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 0.4ms | Allocations: 18256)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 22:57:43 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 896)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 13047)
+Completed 200 OK in 34ms (Views: 29.5ms | ActiveRecord: 1.1ms | Allocations: 14294)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 22:57:53 -0400
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"Imisssmy bike"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 1145)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 22:57:53 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 11.3ms | Allocations: 5073)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 5154)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms | Allocations: 6175)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_reports_path' for #<ActionView::Base:0x0000000000f4d8>
+
+<a class="toggle" href="'.freeze;@output_buffer.append=( new_reports_path );@output_buffer.safe_append='">&emsp; Try again</a>
+                                                         ^^^^^^^^^^^^^^^^
+Did you mean?  new_report_path):
+    1: 
+    2: <h2> Sorry you cannot submit an empty Report</h2>
+    3: 
+    4: <a class="toggle" href="<%= new_reports_path %>">&emsp; Try again</a>
+    5: <a class="toggle" href="<%= root_path %>">&emsp; No report? Return to Homepage</a>
+  
+app/views/reports/empty.html.erb:4
+Started GET "/reports/new" for ::1 at 2023-05-01 22:58:11 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1382)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 14399)
+Completed 200 OK in 27ms (Views: 22.9ms | ActiveRecord: 0.4ms | Allocations: 15970)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 22:58:20 -0400
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"I miss", "description"=>"I missed my bike"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 971)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 22:58:20 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 0.6ms | Allocations: 207)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 13115)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.4ms | Allocations: 14592)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 22:58:22 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1276)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 13415)
+Completed 200 OK in 28ms (Views: 24.1ms | ActiveRecord: 0.3ms | Allocations: 14558)
+
+
+Started GET "/" for ::1 at 2023-05-01 22:58:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 8.7ms | Allocations: 975)
+  Rendered layout layouts/application.html.erb (Duration: 219.9ms | Allocations: 84471)
+Completed 200 OK in 271ms (Views: 232.2ms | ActiveRecord: 3.5ms | Allocations: 100826)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 22:58:56 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 3455)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 15842)
+Completed 200 OK in 50ms (Views: 36.0ms | ActiveRecord: 2.7ms | Allocations: 20213)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 22:59:01 -0400
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"I miss"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 1150)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 22:59:01 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 1.3ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 12481)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.4ms | Allocations: 13503)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 22:59:03 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 855)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 12996)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.4ms | Allocations: 13984)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 23:00:12 -0400
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"Uhfewge"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms | Allocations: 889)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 23:00:12 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 0.1ms | Allocations: 34)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 12174)
+Completed 200 OK in 17ms (Views: 13.9ms | ActiveRecord: 0.4ms | Allocations: 13137)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 23:00:35 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 800)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 13098)
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.5ms | Allocations: 14068)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:00:36 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 899)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 13073)
+Completed 200 OK in 23ms (Views: 19.3ms | ActiveRecord: 0.9ms | Allocations: 14138)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 23:01:18 -0400
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"Miss"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 872)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 23:01:18 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 1.9ms | Allocations: 207)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 13181)
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 0.4ms | Allocations: 14654)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 23:01:21 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 24.2ms | Allocations: 8322)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 8414)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.3ms | Allocations: 9561)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `report_path' for #<ActionView::Base:0x0000000000f2f8>
+
+'.freeze;@output_buffer.append=  form_with(model: @report, url: report_path) do |form| @output_buffer.safe_append='
+                                                                ^^^^^^^^^^^
+Did you mean?  reports_path
+               return_path):
+    3: <h3> See something that could be improved? <br>
+    4: Say something to our harworking team! </h3>
+    5: <br>
+    6: <%= form_with(model: @report, url: report_path) do |form| %>
+    7:   <% if @report.errors.any? %>
+    8:     <div id="error_explanation">
+    9:       <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+  
+app/views/reports/new.html.erb:6
+Started GET "/reports/empty" for ::1 at 2023-05-01 23:01:28 -0400
+Processing by ReportsController#empty as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 1.0ms | Allocations: 207)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 13269)
+Completed 200 OK in 34ms (Views: 29.4ms | ActiveRecord: 1.7ms | Allocations: 14827)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 23:01:30 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1381)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 14398)
+Completed 200 OK in 41ms (Views: 35.5ms | ActiveRecord: 0.5ms | Allocations: 16082)
+
+
+Started POST "/reports/new" for ::1 at 2023-05-01 23:01:35 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/reports/new"):
+  
+Started GET "/reports/new" for ::1 at 2023-05-01 23:01:35 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 877)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 13141)
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.4ms | Allocations: 14205)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:01:37 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 834)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 12983)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.6ms | Allocations: 14003)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:02:23 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 572)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 12721)
+Completed 200 OK in 24ms (Views: 20.4ms | ActiveRecord: 0.9ms | Allocations: 13662)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:02:28 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 572)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 12723)
+Completed 200 OK in 22ms (Views: 18.9ms | ActiveRecord: 0.7ms | Allocations: 13686)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 23:04:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 42.3ms | Allocations: 3822)
+  Rendered layout layouts/application.html.erb (Duration: 253.1ms | Allocations: 86980)
+Completed 200 OK in 325ms (Views: 264.7ms | ActiveRecord: 5.4ms | Allocations: 105983)
+
+
+Started POST "/reports/new" for ::1 at 2023-05-01 23:04:41 -0400
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"miiss"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms | Allocations: 1145)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 23:04:41 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 0.8ms | Allocations: 196)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 12480)
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.4ms | Allocations: 13535)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 23:04:45 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 855)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 12996)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.5ms | Allocations: 13985)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:04:46 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 899)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 13049)
+Completed 200 OK in 28ms (Views: 24.0ms | ActiveRecord: 0.8ms | Allocations: 14130)
+
+
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Create (0.7ms)[0m  [1m[32mINSERT INTO `reports` (`description`, `created_at`, `updated_at`) VALUES (NULL, '2023-05-02 03:09:27.722909', '2023-05-02 03:09:27.722909')[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Destroy (0.4ms)[0m  [1m[31mDELETE FROM `reports` WHERE `reports`.`id` = 1[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2023-05-01 23:20:33 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 7.1ms | Allocations: 975)
+  Rendered layout layouts/application.html.erb (Duration: 257.4ms | Allocations: 84226)
+Completed 200 OK in 314ms (Views: 263.6ms | ActiveRecord: 3.8ms | Allocations: 100590)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 23:20:37 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 3455)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | Allocations: 15842)
+Completed 200 OK in 48ms (Views: 34.2ms | ActiveRecord: 2.6ms | Allocations: 20179)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:20:38 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 930)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 13081)
+Completed 200 OK in 29ms (Views: 24.2ms | ActiveRecord: 1.1ms | Allocations: 14338)
+
+
+Started POST "/reports/new" for ::1 at 2023-05-01 23:20:45 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/reports/new"):
+  
+Started GET "/reports/new" for ::1 at 2023-05-01 23:20:45 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 898)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 13317)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 0.4ms | Allocations: 14439)
+
+
+Started POST "/reports/new" for ::1 at 2023-05-01 23:22:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/reports/new"):
+  
+Started GET "/reports/new" for ::1 at 2023-05-01 23:22:01 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3354)
+  Rendered layout layouts/application.html.erb (Duration: 208.3ms | Allocations: 86717)
+Completed 200 OK in 264ms (Views: 211.4ms | ActiveRecord: 8.2ms | Allocations: 104444)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 23:22:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 39.5ms | Allocations: 3784)
+  Rendered layout layouts/application.html.erb (Duration: 190.5ms | Allocations: 87410)
+Completed 200 OK in 267ms (Views: 202.7ms | ActiveRecord: 6.8ms | Allocations: 106392)
+
+
+Started POST "/reports/new" for ::1 at 2023-05-01 23:22:34 -0400
+Processing by ReportsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"Miggs"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 887)
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 13145)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 0.5ms | Allocations: 14466)
+
+
+Started POST "/reports/new" for ::1 at 2023-05-01 23:22:35 -0400
+Processing by ReportsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"Miggs"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 794)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 12927)
+Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 0.5ms | Allocations: 13942)
+
+
+Started POST "/reports/new" for ::1 at 2023-05-01 23:22:35 -0400
+Processing by ReportsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"Miggs"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 794)
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | Allocations: 12927)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.8ms | Allocations: 13967)
+
+
+Started POST "/reports/new" for ::1 at 2023-05-01 23:22:36 -0400
+Processing by ReportsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"Miggs"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 794)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 12925)
+Completed 200 OK in 26ms (Views: 22.4ms | ActiveRecord: 0.4ms | Allocations: 13926)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 23:25:12 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 28.4ms | Allocations: 3784)
+  Rendered layout layouts/application.html.erb (Duration: 163.7ms | Allocations: 85984)
+Completed 200 OK in 219ms (Views: 171.4ms | ActiveRecord: 5.5ms | Allocations: 105014)
+
+
+Started POST "/reports/new" for ::1 at 2023-05-01 23:25:17 -0400
+Processing by ReportsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"efghgwrg", "description"=>"ebhtetneb"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 887)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 13145)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.3ms | Allocations: 14439)
+
+
+Started POST "/reports/new" for ::1 at 2023-05-01 23:25:18 -0400
+Processing by ReportsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"efghgwrg", "description"=>"ebhtetneb"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 794)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 12927)
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 0.4ms | Allocations: 13944)
+
+
+Started POST "/reports/new" for ::1 at 2023-05-01 23:25:18 -0400
+Processing by ReportsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"efghgwrg", "description"=>"ebhtetneb"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 794)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 12927)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.5ms | Allocations: 13931)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:25:19 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 931)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 13081)
+Completed 200 OK in 20ms (Views: 16.4ms | ActiveRecord: 0.8ms | Allocations: 14203)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO `reports` (`description`, `created_at`, `updated_at`) VALUES (NULL, '2023-05-02 03:30:03.076053', '2023-05-02 03:30:03.076053')[0m
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2023-05-01 23:38:23 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 9.2ms | Allocations: 975)
+  Rendered layout layouts/application.html.erb (Duration: 316.1ms | Allocations: 84350)
+Completed 200 OK in 374ms (Views: 328.5ms | ActiveRecord: 4.0ms | Allocations: 100678)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 23:38:26 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3453)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 15840)
+Completed 200 OK in 52ms (Views: 37.8ms | ActiveRecord: 2.5ms | Allocations: 20193)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:38:29 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 959)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 13110)
+Completed 200 OK in 27ms (Views: 22.1ms | ActiveRecord: 0.9ms | Allocations: 14361)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 23:38:39 -0400
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"Missing", "description"=>"rwgjhrg"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1130)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 23:38:39 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 0.7ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 12483)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.3ms | Allocations: 13551)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 23:38:42 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 857)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 13152)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.4ms | Allocations: 14143)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:38:44 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 616)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 12846)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.7ms | Allocations: 13813)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:38:47 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 12738)
+Completed 200 OK in 26ms (Views: 17.3ms | ActiveRecord: 1.7ms | Allocations: 13691)
+
+
+Started GET "/" for ::1 at 2023-05-01 23:38:49 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 12325)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.5ms | Allocations: 13299)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 23:38:55 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 798)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 12937)
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 0.7ms | Allocations: 13886)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:39:02 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 12737)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.8ms | Allocations: 13693)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:39:32 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.5ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 944)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 13874)
+Completed 200 OK in 27ms (Views: 20.7ms | ActiveRecord: 0.9ms | Allocations: 15420)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:39:51 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.3ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:12
+  Rendered reports/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 940)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 13869)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 0.7ms | Allocations: 15539)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:40:31 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.4ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:11
+  Rendered reports/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 938)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 13867)
+Completed 200 OK in 56ms (Views: 51.2ms | ActiveRecord: 0.8ms | Allocations: 15525)
+
+
+Started GET "/" for ::1 at 2023-05-01 23:41:23 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 8.2ms | Allocations: 975)
+  Rendered layout layouts/application.html.erb (Duration: 224.7ms | Allocations: 84529)
+Completed 200 OK in 289ms (Views: 237.1ms | ActiveRecord: 4.3ms | Allocations: 100866)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 23:41:25 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 3455)
+  Rendered layout layouts/application.html.erb (Duration: 36.8ms | Allocations: 15842)
+Completed 200 OK in 53ms (Views: 39.3ms | ActiveRecord: 2.9ms | Allocations: 20169)
+
+
+Started GET "/report_home" for ::1 at 2023-05-01 23:41:26 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mReport Load (0.6ms)[0m  [1m[34mSELECT `reports`.* FROM `reports`[0m
+  ↳ app/views/reports/index.html.erb:11
+  Rendered reports/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 958)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 13109)
+Completed 200 OK in 44ms (Views: 26.9ms | ActiveRecord: 5.9ms | Allocations: 14363)
+
+
+Started POST "/reports" for ::1 at 2023-05-01 23:41:32 -0400
+Processing by ReportsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "report"=>{"title"=>"wjrgrgrw3", "description"=>"wrgwrbh"}, "commit"=>"Create Report"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+Redirected to http://localhost:3000/reports/empty
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1136)
+
+
+Started GET "/reports/empty" for ::1 at 2023-05-01 23:41:32 -0400
+Processing by ReportsController#empty as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/empty.html.erb within layouts/application
+  Rendered reports/empty.html.erb within layouts/application (Duration: 1.1ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 12481)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.4ms | Allocations: 13521)
+
+
+Started GET "/reports/new" for ::1 at 2023-05-01 23:41:33 -0400
+Processing by ReportsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering reports/new.html.erb within layouts/application
+  Rendered reports/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 855)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 12996)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.4ms | Allocations: 13984)
+
+
+Started GET "/" for ::1 at 2023-05-01 23:41:35 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 12465)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.4ms | Allocations: 13437)
+
+
+Started GET "/stations" for ::1 at 2023-05-01 23:41:37 -0400
+Processing by StationsController#main as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering stations/main.html.erb within layouts/application
+  [1m[36mStation Load (0.6ms)[0m  [1m[34mSELECT `stations`.* FROM `stations` ORDER BY `stations`.`identifier` ASC[0m
+  ↳ app/views/stations/main.html.erb:17
+  [1m[36mBike Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 7[0m
+  ↳ app/views/stations/_row.html.erb:4
+  [1m[36mBike Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 1[0m
+  ↳ app/views/stations/_row.html.erb:4
+  [1m[36mBike Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 14[0m
+  ↳ app/views/stations/_row.html.erb:4
+  [1m[36mBike Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 9[0m
+  ↳ app/views/stations/_row.html.erb:4
+  [1m[36mBike Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 2[0m
+  ↳ app/views/stations/_row.html.erb:4
+  [1m[36mBike Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 4[0m
+  ↳ app/views/stations/_row.html.erb:4
+  [1m[36mBike Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 8[0m
+  ↳ app/views/stations/_row.html.erb:4
+  [1m[36mBike Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 10[0m
+  ↳ app/views/stations/_row.html.erb:4
+  [1m[36mBike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 12[0m
+  ↳ app/views/stations/_row.html.erb:4
+  [1m[36mBike Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 5[0m
+  ↳ app/views/stations/_row.html.erb:4
+  [1m[36mBike Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 3[0m
+  ↳ app/views/stations/_row.html.erb:4
+  [1m[36mBike Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 11[0m
+  ↳ app/views/stations/_row.html.erb:4
+  [1m[36mBike Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 13[0m
+  ↳ app/views/stations/_row.html.erb:4
+  [1m[36mBike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `bikes` WHERE `bikes`.`current_station_id` = 6[0m
+  ↳ app/views/stations/_row.html.erb:4
+  Rendered collection of stations/_row.html.erb [14 times] (Duration: 75.2ms | Allocations: 15063)
+  Rendered stations/main.html.erb within layouts/application (Duration: 89.8ms | Allocations: 19096)
+  Rendered layout layouts/application.html.erb (Duration: 114.8ms | Allocations: 31563)
+Completed 200 OK in 131ms (Views: 105.7ms | ActiveRecord: 14.0ms | Allocations: 34837)
+
+
+Started GET "/user_home" for ::1 at 2023-05-01 23:41:40 -0400
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 831)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 13231)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.4ms | Allocations: 14841)
+
+
+Started GET "/rename" for ::1 at 2023-05-01 23:41:54 -0400
+Processing by UsernameController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering username/edit.html.erb within layouts/application
+  Rendered username/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1751)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 14126)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.4ms | Allocations: 15800)
+
+
+Started POST "/rename" for ::1 at 2023-05-01 23:41:58 -0400
+Processing by UsernameController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "username"=>"bikeple.com", "commit"=>"Update Username"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/username_controller.rb:10:in `update'
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE `users` SET `users`.`username` = 'bikeple.com', `users`.`updated_at` = '2023-05-02 03:41:58.028493' WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/username_controller.rb:10:in `update'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/username_controller.rb:10:in `update'
+Redirected to http://localhost:3000/user_home
+Completed 302 Found in 13ms (ActiveRecord: 3.4ms | Allocations: 4506)
+
+
+Started GET "/user_home" for ::1 at 2023-05-01 23:41:58 -0400
+Processing by UsersController#show as TURBO_STREAM
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:10:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 265)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 12408)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.6ms | Allocations: 13395)
+
+

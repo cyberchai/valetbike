@@ -56,6 +56,8 @@ Rails.application.routes.draw do
   resources :rentals, only: [:return]
   resources :reports, only: [:new, :create]
 
+  get "report_home", to: "reports#index"
+
   #resources :payment, only: [:new, :edit]
 
   get "rename", to: "username#edit", as: :edit_username
