@@ -1,6 +1,6 @@
 # ValetBike Bikesia
 ======= 
-# Chaira Harder, Emma T Schumacher, Yina Bao, Hamssatou Almahamoudou Maiga, Helen Yu 
+## Chaira Harder, Emma T Schumacher, Yina Bao, Hamssatou Almahamoudou Maiga, Helen Yu 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
