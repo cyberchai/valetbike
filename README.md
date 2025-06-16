@@ -2,9 +2,6 @@
 ======= 
 ## Chaira Harder, Emma T Schumacher, Yina Bao, Hamssatou Almahamoudou Maiga, Helen Yu 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
 Instructions:
 Make sure you have relevant gems installed: asdf, bcrypt (version 3.1.11), geocoder, and mapkick, and devise(version 4.9.11). A full list of necessary gems can be found in our Gemfile document inside of our Bikesia project folder.
 
